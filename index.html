@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>marquee-element</title>
+	<link rel="stylesheet" href="./index.css">
+	<style data-fouc>
+		marquee-element:not(:defined) {
+			display: block;
+			overflow: hidden;
+			opacity: 0;
+		}
+
+		marquee-element:not(:defined):not([multiline]) {
+			white-space: nowrap;
+		}
+
+		marquee-element {
+			transition: opacity 1s;
+		}
+	</style>
+	<script type="module" src="./index.js"></script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<h1>marquee-element</h1>
+			<nav>
+				<a href="./src/marquee-element.js">Source Code</a>
+				<a href="./src/marquee-element.d.ts">Type Definitions</a>
+				<button type="button">Show Bounding Box</button>
+			</nav>
+		</div>
+	</header>
+	<main class="wrapper">
+		<section>
+			<h2>Default</h2>
+			<pre>&lt;marquee-element&gt;
+	...
+&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview">
+				The quick brown fox jumps over the lazy dog.
+			</marquee-element>
+		</section>
+
+		<section>
+			<h2>Disabled</h2>
+			<pre>&lt;marquee-element disabled&gt;
+	...
+&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview" disabled>
+				The quick brown fox jumps over the lazy dog.
+			</marquee-element>
+		</section>
+
+		<section>
+			<h2>Pausable</h2>
+			<pre>&lt;marquee-element pausable&gt;
+	Hover over me!
+&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview" pausable>
+				The quick brown fox jumps over the lazy dog.
+			</marquee-element>
+		</section>
+
+		<section>
+			<h2>Multiline</h2>
+			<pre>&lt;marquee-element multiline&gt;
+	&lt;div style="width: 1ch;"&gt;
+		.
+		.
+		.
+	&lt;/div&gt;
+&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview" multiline>
+				<div class="chess">
+					♜♞♝♛♚♝♞♜
+					♟♟♟♟♟♟♟♟
+					♙♙♙♙♙♙♙♙
+					♖♘♗♕♔♗♘♖
+				</div>
+			</marquee-element>
+		</section>
+
+		<section>
+			<h2>Threshold</h2>
+			<pre>&lt;marquee-element threshold="1"&gt;
+	Resize me!
+&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview" threshold="1">
+				The quick brown fox jumps over the lazy dog.
+			</marquee-element>
+		</section>
+
+		<section>
+			<h2>CSS Variables</h2>
+<pre>&lt;marquee-element style="
+	--marquee-element-animation: alternate-horizontal;
+	--marquee-element-duration: 10s;
+	--marquee-element-timing-function: ease-in-out;
+"&gt;&lt;/marquee-element&gt;</pre>
+			<marquee-element class="preview" style="--marquee-element-animation: alternate-horizontal; --marquee-element-duration: 10s; --marquee-element-timing-function: ease-in-out;">
+				🔵
+			</marquee-element>
+		</section>
+
+		<section class="nest">
+			<h2>Nested Elements</h2>
+<pre>&lt;marquee-element style="
+	--marquee-element-animation: alternate-vertical;
+	--marquee-element-duration: 15s;
+	aspect-ratio: 4/3;
+"&gt;
+	&lt;marquee-element style="
+		--marquee-element-animation: alternate-horizontal;
+		--marquee-element-duration: 24s;
+		width: var(--marquee-element-width);
+	&lt;/marquee-element&gt;
+&lt;/marquee-element&gt;</pre>
+			<div class="preview">
+				<marquee-element class="nested" style="--marquee-element-animation: alternate-vertical; aspect-ratio: 4/3; --marquee-element-duration: 15s;">
+					<marquee-element class="nested" style="--marquee-element-animation: alternate-horizontal; width: var(--marquee-element-width); --marquee-element-duration: 24s;">
+						🔴
+					</marquee-element>
+				</marquee-element>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
