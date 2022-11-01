@@ -7,7 +7,7 @@ MarqueeElement is a vanilla web component implementation of the now deprecated H
 | Attribute   | Property    | Type      | Reflected | Description                                                                                                     |
 | ----------- | ----------- | --------- | --------- | --------------------------------------------------------------------------------------------------------------- |
 | `disabled`  | `disabled`  | `Boolean` | Yes       | Disables animations when attribute is present or property is `true`.                                            |
-| `multiline` | `multiline` | `Boolean` | Yes       | Enables word wrapping when attribute is present or proeprty is true`.                                           |
+| `multiline` | `multiline` | `Boolean` | Yes       | Enables word wrapping when attribute is present or property is `true`.                                          |
 | `pausable`  | `pausable`  | `Boolean` | Yes       | Pauses animation on hover when attribute is present or property is `true`.                                      |
 | `threshold` | `threshold` | `Number`  | Yes       | When a positive number is given, slotted elements will animate if and only if they overflow the host container. |
 
@@ -30,3 +30,7 @@ Overriding `--marquee-element-width` or `--marquee-element-height` is not recomm
 | ---------- | ----------------------------------------------- |
 | `frame`    | Overflow container for the animation container. |
 | `marquee`  | Animation container for slotted elements.       |
+
+## Demo
+
+https://kamide.github.io/marquee-element/
